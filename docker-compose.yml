@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  postgres:
+    container_name: wonder-postgres
+    image: postgres
+    expose:
+      - "5432"
+    environment:
+      POSTGRES_USER: super_user
+      POSTGRES_PASSWORD: super_password
+      POSTGRES_DB: wonder
+    volumes:
+      - ./dataset:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+  keycloak:
+    image: jboss/keycloak # for windows
+#    image: sleighzy/keycloak #for mac/linux
+    container_name: wonder-keycloak
+    environment:
+      DB_VENDOR: POSTGRES
+      DB_ADDR: postgres
+      DB_DATABASE: wonder
+      DB_USER: super_user
+      DB_PASSWORD: super_password
+      KEYCLOAK_USER: k_super_user
+      KEYCLOAK_PASSWORD: k_super_password
+    ports:
+      - "8484:8080"
+    depends_on:
+      - postgres
+    links:
+      - "postgres:postgres"
+
