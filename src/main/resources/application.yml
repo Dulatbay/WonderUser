@@ -1,0 +1,44 @@
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  jackson:
+    time-zone: Asia/Almaty
+  jwt:
+    secret-key: 2B4B6250655368566D5971337336763979244226452948404D635166546A576E
+    expiration_time_access: 3600000
+    expiration_time_refresh: 3600000000
+  datasource:
+    url: jdbc:postgresql://monorail.proxy.rlwy.net:55383/railway
+    username: postgres
+    password: 3G4D5EeAF2GgC*BEAcAdfAA4Gf5*c44C
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      id:
+        increment: 1
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        globally_quoted_identifiers: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: namdaribrahim04@gmail.com
+    password: kengywwgkhgcccau
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+bot:
+  name: KASPI_SKLAD_bot
+  token: 7014871689:AAGe-BtK_dXpPgpZw64mk8BbmIDSmu6zelw
+
+
+
