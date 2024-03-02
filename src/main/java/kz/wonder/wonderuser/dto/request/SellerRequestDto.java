@@ -1,5 +1,8 @@
 package kz.wonder.wonderuser.dto.request;
 
+import lombok.Data;
+
+@Data
 public class SellerRequestDto{
 
     private String firstname;
