@@ -1,3 +1,5 @@
+import io.spring.gradle.dependencymanagement.dsl.DependencyManagementExtension
+
 plugins {
     java
     id("org.springframework.boot") version "3.2.3"
@@ -37,6 +39,11 @@ dependencies {
 
 }
 
+configure<DependencyManagementExtension> {
+    imports {
+        mavenBom("io.micrometer:micrometer-tracing-bom:1.1.3")
+    }
+}
 tasks.withType<Test> {
     useJUnitPlatform()
 }
