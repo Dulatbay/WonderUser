@@ -28,7 +28,7 @@ services:
       KEYCLOAK_USER: k_super_user
       KEYCLOAK_PASSWORD: k_super_password
     ports:
-      - "8484:8080"
+      - "8181:8080"
     depends_on:
       - postgres
     links:

@@ -1,12 +1,12 @@
 application:
   title: Wonder
   version: 1.0.0
-  keycloak-url: ${KEYCLOAK_URL:http://localhost:8484/auth}
+  keycloak-url: ${KEYCLOAK_URL:http://localhost:8181/auth}
 spring:
   datasource:
     url: jdbc:postgresql://${DATABASE_DOMAIN:localhost}:${DATABASE_PORT:5432}/${DATABASE_NAME:wonder}
-    username: ${DATABASE_USERNAME:k_app}
-    password: ${DATABASE_PASSWORD:123}
+    username: ${DATABASE_USERNAME:super_user}
+    password: ${DATABASE_PASSWORD:super_password}
     driver-class-name: ${DRIVER_CLASS_NAME:org.postgresql.Driver}
   jpa:
     hibernate:
@@ -23,8 +23,8 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: ${OAUTH2_ISSUER:http://localhost:8484/auth/realms/miniland}
-          jwk-set-uri: ${OAUTH2_JWK:http://localhost:8484/auth/realms/miniland/protocol/openid-connect/certs}
+          issuer-uri: ${OAUTH2_ISSUER:http://localhost:8181/auth/realms/wonder}
+          jwk-set-uri: ${OAUTH2_JWK:http://localhost:8181/auth/realms/wonder/protocol/openid-connect/certs}
   servlet:
     multipart:
       max-file-size: 100MB
@@ -33,13 +33,13 @@ jwt:
   auth:
     converter:
       resource-id: wonder
-      principle-attribute: preferred_username
+      principle-attribute: keycloak_id
 
 server:
   servlet:
     context-path: '/api/'
   error:
     include-message: always
-  port: 8181
+  port: 8080
   address: 0.0.0.0
 
