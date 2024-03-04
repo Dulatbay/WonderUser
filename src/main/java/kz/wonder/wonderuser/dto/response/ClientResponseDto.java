@@ -3,7 +3,7 @@ package kz.wonder.wonderuser.dto.response;
 import lombok.Data;
 
 @Data
-public class SellerResponseDto {
+public class ClientResponseDto {
 
     private String firstname;
 
@@ -14,7 +14,5 @@ public class SellerResponseDto {
     private String email;
 
     private String password;
-
-    private String apiToken;
 
 }

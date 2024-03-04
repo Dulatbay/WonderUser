@@ -1,5 +1,5 @@
 package kz.wonder.wonderuser.enums;
 
 public enum Role {
-    ADMIN, SELLER, STOREKEEPER
+    CLIENT, ADMIN, SELLER, STOREKEEPER
 }

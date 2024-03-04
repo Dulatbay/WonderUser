@@ -25,8 +25,6 @@ public class User{
 
     private String keycloakUserId;
 
-    private String keycloakAuthToken;
-
     private String firstname;
 
     private String lastname;
