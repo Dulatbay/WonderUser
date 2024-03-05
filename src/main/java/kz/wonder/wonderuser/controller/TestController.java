@@ -1,20 +1,17 @@
 package kz.wonder.wonderuser.controller;
 
-import kz.wonder.wonderuser.openfeign.dto.CategoriesDto;
 import kz.wonder.wonderuser.openfeign.proxy.CategoriesProxy;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
-public class CategoriesController{
+public class TestController {
 
     private final CategoriesProxy categoriesProxy;
 
 
-    public CategoriesController(CategoriesProxy categoriesProxy) {
+    public TestController(CategoriesProxy categoriesProxy) {
         this.categoriesProxy = categoriesProxy;
     }
 

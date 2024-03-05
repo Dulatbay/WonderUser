@@ -18,6 +18,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.stereotype.Service;
 
+import javax.mail.Store;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -60,7 +62,7 @@ public class StorekeeperServiceImpl implements StorekeeperService {
         var token = (JwtAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
         String keycloakUserID = token.getToken().getClaim("user_id");
 
-        Seller user = (Seller) userRepository.findByKeycloakUserId(keycloakUserID)
+        Storekeeper user = (Storekeeper) userRepository.findByKeycloakUserId(keycloakUserID)
                 .orElseThrow(() -> new UserNotFoundException("User not found"));
         user.setFirstname(storekeeperRequestDto.getFirstname());
         user.setEmail(storekeeperRequestDto.getEmail());
