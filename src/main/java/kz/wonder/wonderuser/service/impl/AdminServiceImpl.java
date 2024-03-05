@@ -58,7 +58,7 @@ public class AdminServiceImpl implements AdminService {
         var token = (JwtAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
         String keycloakUserID = token.getToken().getClaim("user_id");
 
-        Seller user = (Seller) userRepository.findByKeycloakUserId(keycloakUserID)
+        User user = userRepository.findByKeycloakUserId(keycloakUserID)
                 .orElseThrow(() -> new UserNotFoundException("User not found"));
         user.setFirstname(adminRequestDto.getFirstname());
         user.setEmail(adminRequestDto.getEmail());
