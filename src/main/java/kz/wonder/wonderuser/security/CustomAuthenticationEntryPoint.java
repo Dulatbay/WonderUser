@@ -3,7 +3,7 @@ package kz.wonder.wonderuser.security;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import kz.wonder.wonderuser.exceptions.dtos.ResponseErrorDto;
+import kz.wonder.wonderuser.dto.response.ResponseErrorDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.AuthenticationException;

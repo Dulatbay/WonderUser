@@ -7,5 +7,5 @@ import java.time.ZoneId;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ValueConstants {
-    public static ZoneId ZONE_ID = ZoneId.of("UTC+05:00");
+    public static ZoneId ZONE_ID = ZoneId.of("UTC+05:00"); // Almaty, Kazakhstan
 }
